@@ -1,0 +1,8 @@
+# Começa projeto django
+django-admin startproject "nome do projeto" .
+
+# Criando Apps
+python 
+
+# Rodar o servidor
+python manage.py runserver
