@@ -1,8 +1,17 @@
-# Começa projeto django
-django-admin startproject "nome do projeto" .
+# Criar um novo projeto Django no diretório atual
+django-admin startproject nome_do_projeto .
 
-# Criando Apps
-python 
 
-# Rodar o servidor
+# Criar um novo App dentro do projeto
+python manage.py startapp nome_do_app
+
+
+# Rodar o servidor de desenvolvimento
 python manage.py runserver
+
+
+# Coletar todos os arquivos estáticos (CSS, JS, imagens)
+# dos apps e da pasta STATICFILES_DIRS para a pasta STATIC_ROOT
+# Usado principalmente em ambiente de produção
+python manage.py collectstatic
+

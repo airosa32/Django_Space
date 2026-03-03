@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Todo app criado insere aqui, link o app
+    # com o config do Django. Que é a rota principal.
+    "galeria"
 ]
 
 MIDDLEWARE = [
@@ -56,12 +59,29 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "config.urls"
 
+
+# Configuração do sistema de templates (arquivos HTML).
+# Define como o Django irá localizar e renderizar
+# os templates da aplicação.
 TEMPLATES = [
     {
+        # Backend padrão de templates do Django
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+
+        # Lista de diretórios adicionais onde o Django
+        # deve procurar arquivos HTML.
+        # Aqui informamos que a pasta "templates"
+        # está na raiz do projeto.
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
+
+        # Quando True, permite que o Django também
+        # procure automaticamente por uma pasta "templates"
+        # dentro de cada app instalada.
         "APP_DIRS": True,
+
         "OPTIONS": {
+            # Context processors adicionam variáveis globais
+            # automaticamente disponíveis em todos os templates.
             "context_processors": [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
@@ -70,6 +90,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = "config.wsgi.application"
 
@@ -119,4 +140,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
+
 STATIC_URL = "static/"
+
+# Configuração de arquivos estáticos (CSS, JS, imagens).
+# STATICFILES_DIRS define onde o Django deve procurar
+# arquivos estáticos durante o desenvolvimento.
+# Aqui estamos informando que a pasta "config/static"
+# na raiz do projeto contém esses arquivos.
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "config/static")
+]
+
+# STATIC_ROOT define o diretório final onde todos os
+# arquivos estáticos serão coletados quando executarmos
+# o comando "python manage.py collectstatic".
+# Essa pasta é utilizada em ambiente de produção.
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
