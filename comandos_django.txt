@@ -13,5 +13,5 @@ python manage.py runserver
 # Coletar todos os arquivos estáticos (CSS, JS, imagens)
 # dos apps e da pasta STATICFILES_DIRS para a pasta STATIC_ROOT
 # Usado principalmente em ambiente de produção
-python manage.py collectstatic
+python manage.py collectstatic .
 
