@@ -16,5 +16,3 @@ Dependências principais:
 - python-dotenv
 - asgiref
 - tzdata
-
-## 📂 Estrutura do Projeto
